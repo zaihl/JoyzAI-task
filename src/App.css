@@ -11,16 +11,13 @@
   --bg-main: #f8f9fa;
   --bg-section: #ffffff;
   --bg-item: #f1f3f5;
-  
   --accent-primary: #4c6ef5;
   --accent-secondary: #e03131;
-
   --border-subtle: #dee2e6;
-  --text-dark: #212529; 
+  --text-dark: #212529;
   --text-light: #868e96;
   --shadow-color: rgba(33, 37, 41, 0.08);
 }
-
 
 body {
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -44,13 +41,12 @@ body {
   border: 0;
 }
 
-/* App Container */
 .app-container {
-  width: 40vw; /* Slightly narrower for a more focused feel */
+  width: 40vw;
   min-height: 95%;
-  background-color: var(--bg-section); /* Use section color for overall container */
-  border-radius: 12px; /* Consistent softer radius */
-  box-shadow: 0 6px 24px var(--shadow-color); /* Softer shadow */
+  background-color: var(--bg-section);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px var(--shadow-color);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -59,19 +55,18 @@ body {
 .app-header {
   padding: 22px 30px;
   background-color: var(--accent-primary);
-  color: var(--text-dark); /* Dark text on light green accent */
+  color: var(--text-dark);
   text-align: center;
 }
 
 .app-header h1 {
-  font-size: 22px; /* Cleaner, smaller */
-  font-weight: 600; /* Semibold */
+  font-size: 22px;
+  font-weight: 600;
 }
 
-/* Todo Form Section */
 .todo-adder {
   padding: 20px 30px;
-  background-color: var(--bg-item); /* Pop out the form area slightly */
+  background-color: var(--bg-item);
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -85,20 +80,22 @@ body {
   padding: 12px 16px;
   font-size: 15px;
   border: 1px solid var(--border-subtle);
-  border-right: none; /* Let button complete the border */
+  border-right: none;
   border-radius: 8px 0 0 8px;
   outline: none;
-  background-color: var(--bg-main); /* Match main bg for input */
+  background-color: var(--bg-main);
   color: var(--text-dark);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
 .todo-form .task-input::placeholder {
-    color: var(--text-light);
+  color: var(--text-light);
 }
+
 .todo-form .task-input:focus {
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-primary) 20%, transparent);
-  z-index: 1; /* Ensure focus shadow is on top */
+  z-index: 1;
 }
 
 .todo-form .add-task-btn {
@@ -106,12 +103,13 @@ body {
   font-size: 15px;
   background-color: var(--accent-primary);
   color: var(--text-dark);
-  border: 1px solid var(--accent-primary); /* Ensure border matches */
+  border: 1px solid var(--accent-primary);
   border-radius: 0 8px 8px 0;
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
+
 .todo-form .add-task-btn:hover {
   background-color: color-mix(in srgb, var(--accent-primary) 85%, var(--text-dark) 5%);
   border-color: color-mix(in srgb, var(--accent-primary) 85%, var(--text-dark) 5%);
@@ -133,21 +131,20 @@ body {
   background-color: var(--bg-main);
   color: var(--text-dark);
 }
+
 .todo-form .form-meta-inputs input:focus,
 .todo-form .form-meta-inputs select:focus {
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-primary) 20%, transparent);
 }
 
-
-/* Todo Controls Toolbar */
 .todo-toolbar {
-  padding: 15px 30px; /* Consistent padding */
-  background-color: var(--bg-item); /* Same as adder for consistency */
+  padding: 15px 30px;
+  background-color: var(--bg-item);
   border-bottom: 1px solid var(--border-subtle);
-  min-height: 66px; /* Ensure toolbar has a min height to prevent resize, adjust as needed */
-  display: flex; /* Added for vertical centering if content is small */
-  align-items: center; /* Added for vertical centering */
+  min-height: 66px;
+  display: flex;
+  align-items: center;
 }
 
 .todo-controls {
@@ -155,16 +152,17 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  width: 100%; /* Ensure it takes full width */
-}
-.todo-controls.empty { /* Style for when no todos */
-    justify-content: center;
-}
-.todo-count-empty {
-    color: var(--text-light);
-    font-size: 14px;
+  width: 100%;
 }
 
+.todo-controls.empty {
+  justify-content: center;
+}
+
+.todo-count-empty {
+  color: var(--text-light);
+  font-size: 14px;
+}
 
 .todo-controls .controls-left .todo-count {
   font-size: 13px;
@@ -187,6 +185,7 @@ body {
   color: var(--text-dark);
   outline: none;
 }
+
 .todo-controls .control-select:focus {
   border-color: var(--accent-primary);
 }
@@ -201,19 +200,19 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .todo-controls .controls-right .clear-completed-btn:hover {
   background-color: color-mix(in srgb, var(--accent-secondary) 15%, transparent);
   border-color: var(--accent-secondary);
   color: var(--text-dark);
 }
 
-/* Todo List & Items */
 .todo-main-content {
-  padding: 15px 20px 20px 20px; /* Less horizontal padding for items */
-  flex-grow: 1; /* Allow main content to take available space */
-  background-color: var(--bg-section); /* Match overall app container */
-  min-height: 200px; /* Ensure a minimum height even when empty */
-  overflow-y: auto; /* Scroll if content overflows */
+  padding: 15px 20px 20px 20px;
+  flex-grow: 1;
+  background-color: var(--bg-section);
+  min-height: 200px;
+  overflow-y: auto;
 }
 
 .todo-list {
@@ -232,16 +231,17 @@ body {
   display: flex;
   flex-direction: column;
   padding: 15px 18px;
-  margin-bottom: 10px; /* Space between items */
+  margin-bottom: 10px;
   border-radius: 8px;
-  background-color: var(--bg-item); /* White items pop slightly from section bg */
-  border: 1px solid var(--border-subtle); /* Subtle border */
-  /* Removed per-item shadow for cleaner look */
+  background-color: var(--bg-item);
+  border: 1px solid var(--border-subtle);
   transition: border-color 0.2s ease;
 }
+
 .todo-item:last-child {
   margin-bottom: 0;
 }
+
 .todo-item:hover {
   border-color: color-mix(in srgb, var(--accent-primary) 40%, var(--border-subtle) 60%);
 }
@@ -264,16 +264,16 @@ body {
   width: 18px;
   height: 18px;
   accent-color: var(--accent-primary);
-  background-color: var(--bg-main); /* Ensure checkbox bg matches */
+  background-color: var(--bg-main);
   border: 1px solid var(--border-subtle);
   border-radius: 4px;
   cursor: pointer;
   flex-shrink: 0;
 }
-.todo-item .todo-checkbox:checked {
-    border-color: var(--accent-primary);
-}
 
+.todo-item .todo-checkbox:checked {
+  border-color: var(--accent-primary);
+}
 
 .todo-item .todo-details {
   flex-grow: 1;
@@ -289,26 +289,39 @@ body {
 }
 
 .todo-item .todo-meta {
-  font-size: 12px; /* Smaller meta */
+  font-size: 12px;
   color: var(--text-light);
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 10px; /* Reduced gap */
+  gap: 4px 10px;
 }
+
 .todo-item .todo-meta span {
   display: inline-flex;
   align-items: center;
   padding: 2px 0;
 }
+
 .todo-item .meta-duedate.overdue {
   color: var(--accent-secondary);
   font-weight: 600;
 }
-.todo-item .meta-priority { font-weight: 500; }
-.todo-item .meta-priority.priority-tag-p1 { color: var(--accent-secondary); } /* Strongest priority matches secondary accent */
-.todo-item .meta-priority.priority-tag-p2 { color: color-mix(in srgb, var(--accent-secondary) 70%, var(--text-light) 30%); }
-.todo-item .meta-priority.priority-tag-p3 { color: var(--text-light); }
 
+.todo-item .meta-priority {
+  font-weight: 500;
+}
+
+.todo-item .meta-priority.priority-tag-p1 {
+  color: var(--accent-secondary);
+}
+
+.todo-item .meta-priority.priority-tag-p2 {
+  color: color-mix(in srgb, var(--accent-secondary) 70%, var(--text-light) 30%);
+}
+
+.todo-item .meta-priority.priority-tag-p3 {
+  color: var(--text-light);
+}
 
 .todo-item .todo-actions {
   display: flex;
@@ -328,16 +341,26 @@ body {
   color: var(--text-light);
   font-weight: 500;
 }
+
 .todo-item .todo-actions button:hover {
   border-color: var(--border-subtle);
   color: var(--text-dark);
 }
-.todo-item .edit-btn:hover { background-color: var(--accent-primary); color: var(--text-dark); border-color: var(--accent-primary); }
-.todo-item .delete-btn:hover { background-color: var(--accent-secondary); color: var(--bg-item); border-color: var(--accent-secondary); }
 
-/* Editing State for TodoItem */
+.todo-item .edit-btn:hover {
+  background-color: var(--accent-primary);
+  color: var(--text-dark);
+  border-color: var(--accent-primary);
+}
+
+.todo-item .delete-btn:hover {
+  background-color: var(--accent-secondary);
+  color: var(--bg-item);
+  border-color: var(--accent-secondary);
+}
+
 .todo-item.editing {
-  border-color: var(--accent-primary); /* Highlight item being edited */
+  border-color: var(--accent-primary);
   background-color: color-mix(in srgb, var(--bg-item) 95%, var(--accent-primary) 5%);
 }
 
@@ -350,6 +373,7 @@ body {
   margin-bottom: 10px;
   background-color: var(--bg-main);
 }
+
 .todo-item.editing .edit-main-task:focus {
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-primary) 20%, transparent);
@@ -362,6 +386,7 @@ body {
   margin-bottom: 12px;
   width: 100%;
 }
+
 .todo-item.editing .edit-meta input,
 .todo-item.editing .edit-meta select {
   padding: 8px 10px;
@@ -370,34 +395,51 @@ body {
   border-radius: 6px;
   background-color: var(--bg-main);
 }
+
 .todo-item.editing .edit-meta input:focus,
 .todo-item.editing .edit-meta select:focus {
   border-color: var(--accent-primary);
 }
 
-.todo-item.editing .todo-actions button { color: var(--text-dark); }
-.todo-item.editing .save-btn { background-color: var(--accent-primary); border-color: var(--accent-primary); }
-.todo-item.editing .save-btn:hover { background-color: color-mix(in srgb, var(--accent-primary) 85%, var(--text-dark) 5%); border-color: color-mix(in srgb, var(--accent-primary) 85%, var(--text-dark) 5%);}
-.todo-item.editing .cancel-btn { background-color: color-mix(in srgb, var(--text-light) 40%, var(--bg-item) 60%); border-color: transparent;}
-.todo-item.editing .cancel-btn:hover { background-color: var(--text-light); color:var(--bg-item); }
+.todo-item.editing .todo-actions button {
+  color: var(--text-dark);
+}
 
+.todo-item.editing .save-btn {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
 
-/* Footer */
+.todo-item.editing .save-btn:hover {
+  background-color: color-mix(in srgb, var(--accent-primary) 85%, var(--text-dark) 5%);
+  border-color: color-mix(in srgb, var(--accent-primary) 85%, var(--text-dark) 5%);
+}
+
+.todo-item.editing .cancel-btn {
+  background-color: color-mix(in srgb, var(--text-light) 40%, var(--bg-item) 60%);
+  border-color: transparent;
+}
+
+.todo-item.editing .cancel-btn:hover {
+  background-color: var(--text-light);
+  color: var(--bg-item);
+}
+
 .app-footer {
   text-align: center;
   padding: 20px 30px;
   font-size: 12px;
   color: var(--text-light);
-  background-color: var(--bg-item); /* Match adder/toolbar */
+  background-color: var(--bg-item);
   border-top: 1px solid var(--border-subtle);
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
   body {
     padding-top: 0;
-    background-color: var(--bg-section); /* Match app container for seamless feel */
+    background-color: var(--bg-section);
   }
+
   .app-container {
     border-radius: 0;
     box-shadow: none;
@@ -405,27 +447,25 @@ body {
     min-width: 100vw;
     max-width: 100%;
   }
-  .app-header h1 { font-size: 20px; }
-  .app-header, .todo-adder, .todo-toolbar, .app-footer {
+
+  .app-header h1 {
+    font-size: 20px;
+  }
+
+  .app-header,
+  .todo-adder,
+  .todo-toolbar,
+  .app-footer {
     padding-left: 20px;
     padding-right: 20px;
   }
-   .todo-main-content { padding: 15px; } /* Simpler padding */
-   .todo-item { margin-left: 0; margin-right: 0; }
 
-  .todo-controls { flex-direction: column; align-items: stretch; }
-  .todo-controls .controls-center { order: -1; flex-direction: column; }
-  .todo-controls .controls-left,
-  .todo-controls .controls-right {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top:10px;
+  .todo-main-content {
+    padding: 15px;
   }
-  .todo-controls .controls-left:first-child { margin-top:0;}
 
-  .todo-item .todo-content { flex-direction: column; align-items: flex-start; }
-  .todo-item .todo-checkbox { margin-bottom: 10px; }
-  .todo-item .todo-actions { width: 100%; justify-content: flex-end; }
-  .todo-form .form-meta-inputs { grid-template-columns: 1fr; }
+  .todo-item {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
